@@ -105,7 +105,7 @@ const ArcGalleryHero = ({
           </h1>
 
 
-          <p className="mt-6 text-sm italic text-muted-foreground">
+          <p className="mt-12 text-sm italic text-muted-foreground">
             Узнай свой тип кожи и подбери уход
           </p>
         </div>

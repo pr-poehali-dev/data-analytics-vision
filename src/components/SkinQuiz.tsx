@@ -34,7 +34,7 @@ const questions: Question[] = [
     emoji: "😬",
     answers: [
       { label: "Да, постоянно и много", value: "acne_often", skinPoints: { oily: 2 } },
-      { label: "Иногда, перед критическими днями", value: "acne_sometimes", skinPoints: { combination: 1, normal: 1 } },
+      { label: "Иногда", value: "acne_sometimes", skinPoints: { combination: 1, normal: 1 } },
       { label: "Редко или никогда", value: "acne_rare", skinPoints: { dry: 1, normal: 2 } },
       { label: "Есть покраснения и раздражения", value: "acne_sensitive", skinPoints: { sensitive: 3 } },
     ],
