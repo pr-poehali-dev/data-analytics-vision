@@ -1,11 +1,10 @@
 import json
 import os
-import base64
 import urllib.request
 
 
 def handler(event: dict, context) -> dict:
-    """Анализирует фото кожи через GPT-4 Vision и возвращает детальный отчёт."""
+    """Анализирует фото кожи через Google Gemini Vision и возвращает детальный отчёт."""
 
     if event.get('httpMethod') == 'OPTIONS':
         return {
@@ -30,35 +29,35 @@ def handler(event: dict, context) -> dict:
             'body': json.dumps({'error': 'Фото не передано'})
         }
 
-    api_key = os.environ['OPENAI_API_KEY']
+    api_key = os.environ['GEMINI_API_KEY']
 
     prompt = """Ты эксперт-дерматолог по подростковой коже. Проанализируй это селфи и дай структурированный отчёт.
 
-Верни ТОЛЬКО валидный JSON без markdown в следующем формате:
+Верни ТОЛЬКО валидный JSON без markdown и без блоков ```json в следующем формате:
 {
   "oiliness": {
     "level": "низкий" | "средний" | "высокий",
-    "score": 1-10,
+    "score": число от 1 до 10,
     "comment": "короткое описание 1-2 предложения"
   },
   "inflammation": {
     "level": "нет" | "слабое" | "умеренное" | "сильное",
-    "score": 1-10,
+    "score": число от 1 до 10,
     "comment": "короткое описание 1-2 предложения"
   },
   "pores": {
     "level": "незаметные" | "умеренные" | "расширенные",
-    "score": 1-10,
+    "score": число от 1 до 10,
     "comment": "короткое описание 1-2 предложения"
   },
   "texture": {
     "level": "гладкая" | "неровная" | "шероховатая",
-    "score": 1-10,
+    "score": число от 1 до 10,
     "comment": "короткое описание 1-2 предложения"
   },
   "pigmentation": {
     "level": "нет" | "слабая" | "выраженная",
-    "score": 1-10,
+    "score": число от 1 до 10,
     "comment": "короткое описание 1-2 предложения"
   },
   "overall_skin_type": "жирная" | "сухая" | "комбинированная" | "нормальная" | "чувствительная",
@@ -67,39 +66,47 @@ def handler(event: dict, context) -> dict:
 }"""
 
     payload = json.dumps({
-        "model": "gpt-4o",
-        "max_tokens": 1000,
-        "messages": [
+        "contents": [
             {
-                "role": "user",
-                "content": [
-                    {"type": "text", "text": prompt},
+                "parts": [
+                    {"text": prompt},
                     {
-                        "type": "image_url",
-                        "image_url": {
-                            "url": f"data:image/jpeg;base64,{image_base64}",
-                            "detail": "high"
+                        "inline_data": {
+                            "mime_type": "image/jpeg",
+                            "data": image_base64
                         }
                     }
                 ]
             }
-        ]
+        ],
+        "generationConfig": {
+            "maxOutputTokens": 1000,
+            "temperature": 0.3
+        }
     }).encode('utf-8')
 
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={api_key}"
+
     req = urllib.request.Request(
-        'https://api.openai.com/v1/chat/completions',
+        url,
         data=payload,
-        headers={
-            'Authorization': f'Bearer {api_key}',
-            'Content-Type': 'application/json'
-        },
+        headers={'Content-Type': 'application/json'},
         method='POST'
     )
 
     with urllib.request.urlopen(req) as resp:
         result = json.loads(resp.read().decode('utf-8'))
 
-    content = result['choices'][0]['message']['content']
+    content = result['candidates'][0]['content']['parts'][0]['text']
+
+    # Убираем возможные markdown-блоки
+    content = content.strip()
+    if content.startswith('```'):
+        content = content.split('\n', 1)[1]
+    if content.endswith('```'):
+        content = content.rsplit('```', 1)[0]
+    content = content.strip()
+
     analysis = json.loads(content)
 
     return {
