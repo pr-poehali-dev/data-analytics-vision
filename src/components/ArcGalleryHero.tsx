@@ -103,9 +103,7 @@ const ArcGalleryHero = ({
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground">
             Личный консультант кожи подростка
           </h1>
-          <p className="mt-4 text-lg text-muted-foreground">
-            Создавайте впечатляющие презентации изображений за считанные минуты.
-          </p>
+
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
             <button className="w-full sm:w-auto px-6 py-3 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
               Начать создавать
