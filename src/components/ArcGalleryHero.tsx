@@ -104,14 +104,7 @@ const ArcGalleryHero = ({
             Личный консультант кожи подростка
           </h1>
 
-          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button className="w-full sm:w-auto px-6 py-3 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
-              Начать создавать
-            </button>
-            <button className="w-full sm:w-auto px-6 py-3 rounded-full border border-border hover:bg-accent hover:text-accent-foreground transition-all duration-200">
-              Узнать больше
-            </button>
-          </div>
+
           <p className="mt-6 text-sm italic text-muted-foreground">
             Узнай свой тип кожи и подбери уход
           </p>
