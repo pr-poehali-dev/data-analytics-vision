@@ -7,13 +7,13 @@ type AppStep = "hero" | "quiz" | "results";
 
 const galleryImages = [
   "https://cdn.poehali.dev/projects/7e29ae51-3cb1-4266-8781-20467d43bf11/files/eb046cb7-1040-4923-9d60-4cc7d6156bf4.jpg",
+  "https://cdn.poehali.dev/projects/7e29ae51-3cb1-4266-8781-20467d43bf11/files/281943df-3992-4a1b-8f76-07c1f1f20703.jpg",
   "https://cdn.poehali.dev/projects/7e29ae51-3cb1-4266-8781-20467d43bf11/files/b57ec2f5-ccfb-41f8-a9a0-2d7cd772ab37.jpg",
+  "https://cdn.poehali.dev/projects/7e29ae51-3cb1-4266-8781-20467d43bf11/files/31aee032-70c5-46a0-b900-893e2be9a212.jpg",
   "https://cdn.poehali.dev/projects/7e29ae51-3cb1-4266-8781-20467d43bf11/files/c5d16ceb-f755-42f0-bbdb-5fb52c77963d.jpg",
-  "https://cdn.poehali.dev/projects/7e29ae51-3cb1-4266-8781-20467d43bf11/files/77f8200a-af00-4d27-bc03-d64982597bac.jpg",
+  "https://cdn.poehali.dev/projects/7e29ae51-3cb1-4266-8781-20467d43bf11/files/23124eaf-9015-4bba-8cdf-e685b8a1e2f8.jpg",
   "https://cdn.poehali.dev/projects/7e29ae51-3cb1-4266-8781-20467d43bf11/files/897cbf39-10c3-4d1b-8cbc-97b8ba22d39b.jpg",
-  "https://cdn.poehali.dev/projects/7e29ae51-3cb1-4266-8781-20467d43bf11/files/957d6f8b-c7e0-41e4-abde-dc21699eabca.jpg",
-  "https://cdn.poehali.dev/projects/7e29ae51-3cb1-4266-8781-20467d43bf11/files/edb7942e-8776-41b4-a1f3-70c945636567.jpg",
-  "https://cdn.poehali.dev/projects/7e29ae51-3cb1-4266-8781-20467d43bf11/files/a102007f-3b82-4a3b-a00d-232ef21c15cc.jpg",
+  "https://cdn.poehali.dev/projects/7e29ae51-3cb1-4266-8781-20467d43bf11/files/c89e9a40-018c-4942-a26f-3d139c0ca8d7.jpg",
 ];
 
 const Index = () => {
