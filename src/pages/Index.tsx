@@ -2,9 +2,8 @@ import { useState } from "react";
 import ArcGalleryHero from "@/components/ArcGalleryHero";
 import SkinQuiz, { SkinType } from "@/components/SkinQuiz";
 import ProductRecommendations from "@/components/ProductRecommendations";
-import SkinPhotoAnalysis from "@/components/SkinPhotoAnalysis";
 
-type AppStep = "hero" | "photo" | "quiz" | "results";
+type AppStep = "hero" | "quiz" | "results";
 
 const galleryImages = [
   "https://cdn.poehali.dev/projects/7e29ae51-3cb1-4266-8781-20467d43bf11/files/eb046cb7-1040-4923-9d60-4cc7d6156bf4.jpg",
@@ -62,7 +61,7 @@ const Index = () => {
               </p>
               <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
                 <button
-                  onClick={() => setStep("photo")}
+                  onClick={() => setStep("quiz")}
                   className="w-full sm:w-auto px-8 py-4 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 font-bold text-lg"
                 >
                   Пройти тест ✨
@@ -82,31 +81,11 @@ const Index = () => {
         </>
       )}
 
-      {step === "photo" && (
-        <div className="min-h-screen flex flex-col items-center justify-center py-16 px-4">
-          <div className="w-full max-w-lg mx-auto mb-8 text-center">
-            <button
-              onClick={() => setStep("hero")}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors mb-6 inline-flex items-center gap-1"
-            >
-              ← Назад
-            </button>
-          </div>
-          <SkinPhotoAnalysis
-            onComplete={(skinType) => {
-              setSkinType(skinType as SkinType);
-              setStep("results");
-            }}
-            onSkip={() => setStep("quiz")}
-          />
-        </div>
-      )}
-
       {step === "quiz" && (
         <div className="min-h-screen flex flex-col items-center justify-center py-16 px-4">
           <div className="w-full max-w-lg mx-auto mb-8 text-center">
             <button
-              onClick={() => setStep("photo")}
+              onClick={() => setStep("hero")}
               className="text-sm text-muted-foreground hover:text-foreground transition-colors mb-6 inline-flex items-center gap-1"
             >
               ← Назад
