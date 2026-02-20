@@ -56,9 +56,6 @@ const Index = () => {
               <div className="inline-block bg-secondary text-secondary-foreground text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
                 🌸 Бесплатная диагностика кожи
               </div>
-              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground leading-tight">
-                Узнай свой тип кожи и подбери уход
-              </h1>
               <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
                 Ответь на 5 простых вопросов — получишь персональную программу ухода специально для подростковой кожи.
               </p>
