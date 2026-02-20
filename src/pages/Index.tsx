@@ -6,14 +6,14 @@ import ProductRecommendations from "@/components/ProductRecommendations";
 type AppStep = "hero" | "quiz" | "results";
 
 const galleryImages = [
-  "https://cdn.poehali.dev/projects/7e29ae51-3cb1-4266-8781-20467d43bf11/files/1ed891fe-8ed7-44c9-9971-e2bcc07c414e.jpg",
-  "https://cdn.poehali.dev/projects/7e29ae51-3cb1-4266-8781-20467d43bf11/files/4530d02e-4ab0-422e-9b68-32b1bd0ff4ee.jpg",
-  "https://cdn.poehali.dev/projects/7e29ae51-3cb1-4266-8781-20467d43bf11/files/f02e9577-6dc8-4e3b-af69-05ed967dd33a.jpg",
-  "https://cdn.poehali.dev/projects/7e29ae51-3cb1-4266-8781-20467d43bf11/files/d2802218-5787-4af8-929a-32f693a6c81a.jpg",
-  "https://cdn.poehali.dev/projects/7e29ae51-3cb1-4266-8781-20467d43bf11/files/6acb37be-67c7-4bda-9224-165e60fb126d.jpg",
-  "https://cdn.poehali.dev/projects/7e29ae51-3cb1-4266-8781-20467d43bf11/files/56980674-153d-4916-922f-5c1983bd5577.jpg",
-  "https://cdn.poehali.dev/projects/7e29ae51-3cb1-4266-8781-20467d43bf11/files/0884292f-936d-4350-9192-71fac7855a32.jpg",
-  "https://cdn.poehali.dev/projects/7e29ae51-3cb1-4266-8781-20467d43bf11/files/2aaf525c-5ecd-4acb-bd0e-c163375e2212.jpg",
+  "https://cdn.poehali.dev/projects/7e29ae51-3cb1-4266-8781-20467d43bf11/files/eb046cb7-1040-4923-9d60-4cc7d6156bf4.jpg",
+  "https://cdn.poehali.dev/projects/7e29ae51-3cb1-4266-8781-20467d43bf11/files/b57ec2f5-ccfb-41f8-a9a0-2d7cd772ab37.jpg",
+  "https://cdn.poehali.dev/projects/7e29ae51-3cb1-4266-8781-20467d43bf11/files/c5d16ceb-f755-42f0-bbdb-5fb52c77963d.jpg",
+  "https://cdn.poehali.dev/projects/7e29ae51-3cb1-4266-8781-20467d43bf11/files/77f8200a-af00-4d27-bc03-d64982597bac.jpg",
+  "https://cdn.poehali.dev/projects/7e29ae51-3cb1-4266-8781-20467d43bf11/files/897cbf39-10c3-4d1b-8cbc-97b8ba22d39b.jpg",
+  "https://cdn.poehali.dev/projects/7e29ae51-3cb1-4266-8781-20467d43bf11/files/957d6f8b-c7e0-41e4-abde-dc21699eabca.jpg",
+  "https://cdn.poehali.dev/projects/7e29ae51-3cb1-4266-8781-20467d43bf11/files/edb7942e-8776-41b4-a1f3-70c945636567.jpg",
+  "https://cdn.poehali.dev/projects/7e29ae51-3cb1-4266-8781-20467d43bf11/files/a102007f-3b82-4a3b-a00d-232ef21c15cc.jpg",
 ];
 
 const Index = () => {
