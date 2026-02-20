@@ -47,14 +47,25 @@ const SkinPhotoAnalysis = ({ onComplete, onSkip }: Props) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const handleFile = (file: File) => {
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      const dataUrl = e.target?.result as string;
+    const img = new Image();
+    const objectUrl = URL.createObjectURL(file);
+    img.onload = () => {
+      const maxSize = 800;
+      let { width, height } = img;
+      if (width > maxSize || height > maxSize) {
+        if (width > height) { height = Math.round((height * maxSize) / width); width = maxSize; }
+        else { width = Math.round((width * maxSize) / height); height = maxSize; }
+      }
+      const canvas = document.createElement("canvas");
+      canvas.width = width;
+      canvas.height = height;
+      canvas.getContext("2d")!.drawImage(img, 0, 0, width, height);
+      const dataUrl = canvas.toDataURL("image/jpeg", 0.85);
       setPreview(dataUrl);
-      const base64 = dataUrl.split(",")[1];
-      setImage(base64);
+      setImage(dataUrl.split(",")[1]);
+      URL.revokeObjectURL(objectUrl);
     };
-    reader.readAsDataURL(file);
+    img.src = objectUrl;
   };
 
   const handleDrop = (e: React.DragEvent) => {
