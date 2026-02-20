@@ -190,13 +190,24 @@ const ProductRecommendations = ({ skinType, onRestart }: Props) => {
         </div>
       </div>
 
-      <button
-        onClick={onRestart}
-        className="w-full py-4 rounded-2xl border-2 border-border bg-card hover:bg-secondary font-semibold text-foreground transition-all duration-200 flex items-center justify-center gap-2"
-      >
-        <Icon name="RotateCcw" size={18} />
-        Пройти тест заново
-      </button>
+      <div className="flex flex-col sm:flex-row gap-3 mb-4">
+        <a
+          href={`https://t.me/share/url?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent('Прошла тест на тип кожи — советую пройти тебе! 🌸')}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex-1 py-4 rounded-2xl bg-primary text-primary-foreground hover:bg-primary/90 font-semibold transition-all duration-200 flex items-center justify-center gap-2 shadow-md hover:shadow-lg"
+        >
+          <Icon name="Send" size={18} />
+          Поделиться с подругой
+        </a>
+        <button
+          onClick={onRestart}
+          className="flex-1 py-4 rounded-2xl border-2 border-border bg-card hover:bg-secondary font-semibold text-foreground transition-all duration-200 flex items-center justify-center gap-2"
+        >
+          <Icon name="RotateCcw" size={18} />
+          Пройти тест заново
+        </button>
+      </div>
     </div>
   );
 };
