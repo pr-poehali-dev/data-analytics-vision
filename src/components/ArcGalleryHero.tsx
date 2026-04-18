@@ -103,11 +103,6 @@ const ArcGalleryHero = ({
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground">
             Личный консультант кожи подростка
           </h1>
-
-
-          <p className="mt-12 text-sm italic text-muted-foreground">
-            Узнай свой тип кожи и подбери уход
-          </p>
         </div>
       </div>
     </section>
