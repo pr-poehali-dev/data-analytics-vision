@@ -53,10 +53,7 @@ const Index = () => {
             className="relative z-10 flex items-center justify-center px-6 pb-20 -mt-40 md:-mt-52 lg:-mt-64"
           >
             <div className="text-center max-w-2xl px-6 opacity-0 animate-fade-in" style={{ animationDelay: "800ms", animationFillMode: "forwards" }}>
-              <div className="inline-block bg-secondary text-secondary-foreground text-sm font-semibold px-4 py-1.5 rounded-full mb-4 mt-8">
-                🌸 Бесплатная диагностика кожи
-              </div>
-              <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
+              <p className="mt-8 text-lg text-muted-foreground leading-relaxed">
                 Ответь на 5 простых вопросов — получишь персональную программу ухода специально для подростковой кожи.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
