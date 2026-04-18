@@ -50,7 +50,7 @@ const Index = () => {
             className="pt-16 pb-16 md:pt-20 md:pb-20 lg:pt-24 lg:pb-24"
           />
           <div
-            className="relative z-10 flex items-center justify-center px-6 pb-20 -mt-40 md:-mt-52 lg:-mt-64"
+            className="relative z-10 flex items-center justify-center px-6 pb-20 -mt-16 md:-mt-24 lg:-mt-32"
           >
             <div className="text-center max-w-2xl px-6 opacity-0 animate-fade-in" style={{ animationDelay: "800ms", animationFillMode: "forwards" }}>
               <p className="mt-8 text-lg text-muted-foreground leading-relaxed">
